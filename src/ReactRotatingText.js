@@ -9,7 +9,7 @@ class ReactRotatingText extends React.Component {
     const { items, random } = this.props;
     this.state = {
       index: random ? Math.floor(Math.random() * Math.floor(items.length)) : 0,
-      output: '',
+      output: items[0],
       substrLength: 0,
     };
     this.timeouts = [];
@@ -152,7 +152,7 @@ class ReactRotatingText extends React.Component {
       <span style={{ color }} {...other}
             aria-label={ this.props.items[this.state.index] }>
         { this.state.output }
-        { cursor ? <span className="react-rotating-text-cursor">|</span> : null }
+        { cursor ? <span className="react-rotating-text-cursor"></span> : null }
       </span>
     );
   }
